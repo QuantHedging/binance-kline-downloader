@@ -9,7 +9,8 @@ from utils import dt
 import os
 
 data_dir = "data"
-kline_symbol = KLineSymbol.EthUsdt
+# kline_symbol = KLineSymbol.EthUsdt
+kline_symbol = KLineSymbol.LtcUsdt
 kline_interval = KLineInterval.OneMinute
 
 data_path = "{}/{}/{}".format(data_dir, kline_symbol.value, kline_interval.value)
@@ -27,7 +28,7 @@ while True:
         continue
 
     klines = fetch_all_klines_for_day(symbol=kline_symbol, interval=kline_interval, date=ts_date,
-                                      proxies={"socks5": "socks5://127.0.0.1:1080"})
+                                      proxies={"https": "http://127.0.0.1:1080"})
     if len(klines) == 0:
         break
 

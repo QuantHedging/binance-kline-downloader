@@ -9,6 +9,7 @@ from enum import Enum
 class KLineSymbol(Enum):
     BtcUsdt = "BTCUSDT"
     EthUsdt = "ETHUSDT"
+    LtcUsdt = "LTCUSDT"
 
 
 class KLineInterval(Enum):
